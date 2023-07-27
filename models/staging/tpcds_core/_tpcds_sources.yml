@@ -1,0 +1,20 @@
+sources:
+  - name: tpcds_core
+    database: raw_tpch
+    schema: tpcds_sf10tcl
+    tables:
+      - name: call_center
+      - name: customer
+      - name: customer_address
+      - name: customer_demographics
+      - name: date_dim
+      - name: household_demographics
+      - name: inventory
+      - name: item
+      - name: income_band
+      - name: promotion
+      - name: store
+      - name: time_dim
+      - name: warehouse
+      - name: web_site
+      - name: web_page
