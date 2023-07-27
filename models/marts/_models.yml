@@ -1,0 +1,182 @@
+models:
+  - name: customers
+    description: core data model for customers of our business
+    access: public
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: customer_sk
+        data_type: number
+        description: unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+      - name: salutation
+        data_type: text
+      - name: first_name
+        data_type: text
+      - name: last_name
+        data_type: text
+      - name: email_address
+        data_type: text
+      - name: is_preferred_customer
+        data_type: boolean
+      - name: gender
+        data_type: text
+      - name: marital_status
+        data_type: text
+      - name: credit_rating
+        data_type: text
+      - name: vehicle_count
+        data_type: number
+      - name: income_band_lower_bound
+        data_type: number
+      - name: income_band_upper_bound
+        data_type: number
+
+  - name: stores
+    description: core data model for stores
+    access: public
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: store_sk
+        data_type: number
+        description: unique identifier for a store
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        data_type: text
+      - name: rec_start_date
+        data_type: date
+      - name: rec_end_date
+        data_type: date
+      - name: closed_date_sk
+        data_type: number
+      - name: store_name
+        data_type: text
+      - name: number_employees
+        data_type: number
+      - name: floor_space
+        data_type: number
+      - name: hours
+        data_type: text
+      - name: manager
+        data_type: text
+      - name: market_id
+        data_type: number
+      - name: geography_class
+        data_type: text
+      - name: market_desc
+        data_type: text
+      - name: market_manager
+        data_type: text
+      - name: division_id
+        data_type: number
+      - name: division_name
+        data_type: text
+      - name: company_id
+        data_type: number
+      - name: company_name
+        data_type: text
+      - name: street_number
+        data_type: text
+      - name: street_name
+        data_type: text
+      - name: street_type
+        data_type: text
+      - name: suite_number
+        data_type: text
+      - name: city
+        data_type: text
+      - name: county
+        data_type: text
+      - name: state
+        data_type: text
+      - name: zip
+        data_type: text
+      - name: country
+        data_type: text
+      - name: gmt_offset
+        data_type: number
+      - name: tax_precentage
+        data_type: number
+      - name: store_closed_date
+        data_type: date
+
+  - name: call_centers
+    description: core data model for call centers
+    access: public
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: call_center_sk
+        data_type: number
+        description: unique identifier for a call center
+        tests:
+          - unique
+          - not_null
+      - name: call_center_id
+        data_type: text
+      - name: rec_start_date
+        data_type: date
+      - name: rec_end_date
+        data_type: date
+      - name: name
+        data_type: text
+      - name: class
+        data_type: text
+      - name: employees
+        data_type: number
+      - name: sq_ft
+        data_type: number
+      - name: hours
+        data_type: text
+      - name: manager
+        data_type: text
+      - name: mkt_id
+        data_type: number
+      - name: mkt_class
+        data_type: text
+      - name: mkt_desc
+        data_type: text
+      - name: market_manager
+        data_type: text
+      - name: division
+        data_type: number
+      - name: division_name
+        data_type: text
+      - name: company
+        data_type: number
+      - name: company_name
+        data_type: text
+      - name: street_number
+        data_type: text
+      - name: street_name
+        data_type: text
+      - name: street_type
+        data_type: text
+      - name: suite_number
+        data_type: text
+      - name: city
+        data_type: text
+      - name: county
+        data_type: text
+      - name: state
+        data_type: text
+      - name: zip
+        data_type: text
+      - name: country
+        data_type: text
+      - name: gmt_offset
+        data_type: number
+      - name: tax_percentage
+        data_type: number
+      - name: call_center_opened_date
+        data_type: date
+      - name: call_center_closed_date
+        data_type: date
