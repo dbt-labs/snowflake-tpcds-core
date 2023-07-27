@@ -35,4 +35,4 @@ models:
   snowflake_tpcds_core:
     # Applies to all files under models/example/
     marts:
-      materialized: +table
+      materialized: table
