@@ -14,7 +14,6 @@ sources:
       - name: income_band
       - name: promotion
       - name: store
-      - name: time_dim
       - name: warehouse
       - name: web_site
       - name: web_page

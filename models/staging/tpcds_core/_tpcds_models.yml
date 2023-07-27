@@ -87,14 +87,6 @@ models:
           - unique
           - not_null
 
-  - name: stg_tpcds_core__time_dim
-    description: staging model for the time_dim table from the core raw schema 
-    columns:
-      - name: time_sk
-        tests:
-          - unique
-          - not_null
-
   - name: stg_tpcds_core__warehouse
     description: staging model for the warehouse table from the core raw schema 
     columns:

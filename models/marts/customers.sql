@@ -14,7 +14,7 @@ customer_demographics as (
 
 customer_address as (
 
-    select * from {{ ref('stg_tpcds_core__customer_demographics') }}
+    select * from {{ ref('stg_tpcds_core__customer_address') }}
 
 ),
 
@@ -37,6 +37,8 @@ final as (
         , customers.salutation
         , customers.first_name
         , customers.last_name
+        , customer_address.state
+        , customer_address.country
         , customers.email_address
         , customers.is_preferred_customer
         , customer_demographics.gender
