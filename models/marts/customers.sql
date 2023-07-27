@@ -43,6 +43,8 @@ final as (
         , customer_demographics.marital_status
         , customer_demographics.credit_rating
         , household_demographics.vehicle_count
+        , income_band.income_band_lower_bound
+        , income_band.income_band_upper_bound
     
     from customers 
     left join customer_demographics
@@ -55,4 +57,4 @@ final as (
 
 )
 
-select * from customer_demographics
+select * from final
