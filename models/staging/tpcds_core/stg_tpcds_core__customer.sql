@@ -14,7 +14,7 @@ renamed as (
         c_customer_id as customer_id,
         c_current_cdemo_sk as customer_demographics_sk,
         c_current_hdemo_sk as household_demographics_sk,
-        c_current_addr_sk as current_addr_sk,
+        c_current_addr_sk as current_address_sk,
         c_first_shipto_date_sk as first_shipto_date_sk,
         c_first_sales_date_sk as first_sales_date_sk,
         c_salutation as salutation,

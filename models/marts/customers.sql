@@ -37,6 +37,7 @@ final as (
         , customers.salutation
         , customers.first_name
         , customers.last_name
+        , customer_address.city
         , customer_address.state
         , customer_address.country
         , customers.email_address
@@ -49,6 +50,8 @@ final as (
         , income_band.income_band_upper_bound
     
     from customers 
+    left join customer_address
+        on customers.current_address_sk = customer_address.customer_address_sk
     left join customer_demographics
         on customers.customer_demographics_sk = customer_demographics.customer_demographics_sk
     left join household_demographics
