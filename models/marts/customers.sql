@@ -1,0 +1,58 @@
+with 
+
+customers as (
+
+    select * from {{ ref('stg_tpcds_core__customer') }}
+
+),
+
+customer_demographics as (
+
+    select * from {{ ref('stg_tpcds_core__customer_demographics') }}
+
+),
+
+customer_address as (
+
+    select * from {{ ref('stg_tpcds_core__customer_demographics') }}
+
+),
+
+household_demographics as (
+
+    select * from {{ ref('stg_tpcds_core__household_demographics') }}
+
+),
+
+income_band as (
+
+    select * from {{ ref('stg_tpcds_core__income_band') }}
+
+),
+
+final as (
+
+    select
+        customers.customer_sk
+        , customers.salutation
+        , customers.first_name
+        , customers.last_name
+        , customers.email_address
+        , customers.is_preferred_customer
+        , customer_demographics.gender
+        , customer_demographics.marital_status
+        , customer_demographics.credit_rating
+        , household_demographics.vehicle_count
+    
+    from customers 
+    left join customer_demographics
+        on customers.customer_demographics_sk = customer_demographics.customer_demographics_sk
+    left join household_demographics
+        on customers.household_demographics_sk = household_demographics.household_demographics_sk
+    left join income_band
+        on household_demographics.income_band_sk = income_band.income_band_sk
+
+
+)
+
+select * from customer_demographics
