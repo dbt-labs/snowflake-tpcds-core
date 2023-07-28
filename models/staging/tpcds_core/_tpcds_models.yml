@@ -55,26 +55,10 @@ models:
           - unique
           - not_null
 
-  - name: stg_tpcds_core__item
-    description: staging model for the item table from the core raw schema 
-    columns:
-      - name: item_sk
-        tests:
-          - unique
-          - not_null
-
   - name: stg_tpcds_core__income_band
     description: staging model for the income_band table from the core raw schema 
     columns:
       - name: income_band_sk
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_tpcds_core__promotion
-    description: staging model for the promotion table from the core raw schema 
-    columns:
-      - name: promotion_sk
         tests:
           - unique
           - not_null
@@ -87,26 +71,3 @@ models:
           - unique
           - not_null
 
-  - name: stg_tpcds_core__warehouse
-    description: staging model for the warehouse table from the core raw schema 
-    columns:
-      - name: warehouse_sk
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_tpcds_core__web_site
-    description: staging model for the web_site table from the core raw schema 
-    columns:
-      - name: web_site_sk
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_tpcds_core__web_page
-    description: staging model for the web_page table from the core raw schema 
-    columns:
-      - name: web_page_sk
-        tests:
-          - unique
-          - not_null
