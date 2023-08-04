@@ -10,5 +10,4 @@ sources:
       - name: date_dim
       - name: household_demographics
       - name: inventory
-      - name: income_band
       - name: store

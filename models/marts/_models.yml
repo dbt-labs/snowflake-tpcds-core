@@ -36,10 +36,6 @@ models:
         data_type: text
       - name: vehicle_count
         data_type: number
-      - name: income_band_lower_bound
-        data_type: number
-      - name: income_band_upper_bound
-        data_type: number
 
   - name: stores
     description: core data model for stores

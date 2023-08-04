@@ -24,12 +24,6 @@ household_demographics as (
 
 ),
 
-income_band as (
-
-    select * from {{ ref('stg_tpcds_core__income_band') }}
-
-),
-
 final as (
 
     select
@@ -46,8 +40,6 @@ final as (
         , customer_demographics.marital_status
         , customer_demographics.credit_rating
         , household_demographics.vehicle_count
-        , income_band.income_band_lower_bound
-        , income_band.income_band_upper_bound
     
     from customers 
     left join customer_address
@@ -56,8 +48,6 @@ final as (
         on customers.customer_demographics_sk = customer_demographics.customer_demographics_sk
     left join household_demographics
         on customers.household_demographics_sk = household_demographics.household_demographics_sk
-    left join income_band
-        on household_demographics.income_band_sk = income_band.income_band_sk
 
 
 )

@@ -55,14 +55,6 @@ models:
           - unique
           - not_null
 
-  - name: stg_tpcds_core__income_band
-    description: staging model for the income_band table from the core raw schema 
-    columns:
-      - name: income_band_sk
-        tests:
-          - unique
-          - not_null
-
   - name: stg_tpcds_core__store
     description: staging model for the store table from the core raw schema 
     columns:
