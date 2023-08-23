@@ -43,6 +43,7 @@ models:
 
   - name: stores
     description: core data model for stores
+    latest_version: 1
     access: public
     config:
       contract:
@@ -112,6 +113,16 @@ models:
         data_type: number
       - name: store_closed_date
         data_type: date
+    versions:
+      - v: 1
+        defined_in: stores
+      - v: 2
+        columns:
+          - include: all
+          - name: entity_type
+            data_type: text
+            description: an indicator that each record represents a store
+
 
   - name: call_centers
     description: core data model for call centers
