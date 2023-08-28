@@ -16,6 +16,8 @@ customer_address as (
 
     select * from {{ ref('stg_tpcds_core__customer_address') }}
 
+
+    
 ),
 
 household_demographics as (
