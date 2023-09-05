@@ -17,7 +17,13 @@ renamed as (
         c_current_addr_sk as current_address_sk,
         c_first_shipto_date_sk as first_shipto_date_sk,
         c_first_sales_date_sk as first_sales_date_sk,
-        c_salutation as salutation,
+        case
+            when c_salutation = 'Mr.' then 'Monsieur'
+            when c_salutation = 'Mrs.' then 'Madame'
+            when c_salutation = 'Miss' then 'Mademoiselle'
+            when c_salutation = 'Dr.' then 'Professeur'
+            when c_salutation = 'Sir' then 'Son excellence'
+            end as salutation,
         c_first_name as first_name,
         c_last_name as last_name,
         c_preferred_cust_flag as preferred_cust_flag,
