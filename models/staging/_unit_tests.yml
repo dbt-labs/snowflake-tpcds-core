@@ -41,20 +41,6 @@ unit_tests:
       format: csv 
       fixture: expected__is_preferred_customer
 
-  - name: test_preferred_customer__dict_rows
-    model: stg_tpcds_core__customer
-    given: 
-      - input: source('tpcds_core', 'customer')
-        rows: 
-          - {c_preferred_cust_flag: null}
-          - {c_preferred_cust_flag: 'N'}
-          - {c_preferred_cust_flag: 'Y'}
-    expect: 
-      rows:
-        - {is_preferred_customer: false}
-        - {is_preferred_customer: false}
-        - {is_preferred_customer: true}
-
   - name: test_customer_name__no_override
     model: stg_tpcds_core__customer
     given: 
