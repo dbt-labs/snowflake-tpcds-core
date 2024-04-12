@@ -28,7 +28,8 @@ renamed as (
         c_birth_country as birth_country,
         c_login as login,
         c_email_address as email_address,
-        c_last_review_date as last_review_date
+        c_last_review_date as last_review_date,
+        {{ silly_macro() }} as customer_name
 
     from source
 

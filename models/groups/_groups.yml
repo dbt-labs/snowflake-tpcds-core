@@ -1,0 +1,4 @@
+groups:
+  - name: customer_info
+    owner:
+      name: Core Data Carl

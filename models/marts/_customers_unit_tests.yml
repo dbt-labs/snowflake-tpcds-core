@@ -1,0 +1,23 @@
+unit_tests: 
+  - name: unit_test__multiple_givens
+    model: customers
+    description: a unit test for explorer so we can see what multiple given blocks looks like
+    given: 
+      - input: ref('stg_tpcds_core__customer')
+        rows: 
+          - {current_address_sk: 1 , customer_demographics_sk: 1 , household_demographics_sk: 1, salutation: 'Dr.'}
+      - input: ref('stg_tpcds_core__customer_demographics')
+        rows: 
+          - {customer_demographics_sk: 1}
+      - input: ref('stg_tpcds_core__customer_address')
+        rows: 
+          - {customer_address_sk: 1}
+      - input: ref('stg_tpcds_core__household_demographics')
+        rows: 
+          - {household_demographics_sk: 1, income_band_sk: 1}
+      - input: ref('stg_tpcds_core__income_band')
+        rows: 
+          - {income_band_sk: 1}
+    expect: 
+      rows: 
+        - {salutation: 'Dr.'}

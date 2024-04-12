@@ -1,0 +1,87 @@
+unit_tests: 
+  - name: test_preferred_customer__dict_rows
+    model: stg_tpcds_core__customer
+    given: 
+      - input: source('tpcds_core', 'customer')
+        rows: 
+          - {c_preferred_cust_flag: null}
+          - {c_preferred_cust_flag: 'N'}
+          - {c_preferred_cust_flag: 'Y'}
+    expect: 
+      rows:
+        - {is_preferred_customer: false}
+        - {is_preferred_customer: false}
+        - {is_preferred_customer: true}
+
+  - name: test_preferred_customer__inline_csv
+    model: stg_tpcds_core__customer
+    given: 
+      - input: source('tpcds_core', 'customer')
+        format: csv
+        rows: |
+          c_preferred_cust_flag,c_customer_sk
+          ,1
+          N,2
+          Y,3
+    expect:
+      format: csv 
+      rows: |
+          is_preferred_customer
+          false
+          false
+          true
+
+  - name: test_preferred_customer__csv_fixture
+    model: stg_tpcds_core__customer
+    given: 
+      - input: source('tpcds_core', 'customer')
+        format: csv
+        fixture: mock_customer_source__preferred_customer
+    expect:
+      format: csv 
+      fixture: expected__is_preferred_customer
+
+  - name: test_preferred_customer__dict_rows
+    model: stg_tpcds_core__customer
+    given: 
+      - input: source('tpcds_core', 'customer')
+        rows: 
+          - {c_preferred_cust_flag: null}
+          - {c_preferred_cust_flag: 'N'}
+          - {c_preferred_cust_flag: 'Y'}
+    expect: 
+      rows:
+        - {is_preferred_customer: false}
+        - {is_preferred_customer: false}
+        - {is_preferred_customer: true}
+
+  - name: test_customer_name__no_override
+    model: stg_tpcds_core__customer
+    given: 
+      - input: source('tpcds_core', 'customer')
+        rows: 
+          - {c_customer_sk: 1}
+          - {c_customer_sk: 2}
+          - {c_customer_sk: 3}
+    expect: 
+      rows:
+        - {customer_name: dave}
+        - {customer_name: dave}
+        - {customer_name: dave}
+
+  - name: test_customer_name__with_override
+    model: stg_tpcds_core__customer
+    overrides:
+      macros: 
+        silly_macro: "'chris'"
+    given: 
+      - input: source('tpcds_core', 'customer')
+        rows: 
+          - {c_customer_sk: 1}
+          - {c_customer_sk: 2}
+          - {c_customer_sk: 3}
+    expect: 
+      rows:
+        - {customer_name: chris}
+        - {customer_name: chris}
+        - {customer_name: chris}

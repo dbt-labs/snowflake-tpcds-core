@@ -9,6 +9,7 @@ models:
 
   - name: stg_tpcds_core__customer
     description: staging model for the customer table from the core raw schema 
+    group: customer_info
     columns:
       - name: customer_sk
         tests:
@@ -17,6 +18,7 @@ models:
 
   - name: stg_tpcds_core__customer_address
     description: staging model for the customer_address table from the core raw schema 
+    group: customer_info
     columns:
       - name: customer_address_sk
         tests:
@@ -25,6 +27,7 @@ models:
 
   - name: stg_tpcds_core__customer_demographics
     description: staging model for the customer_demographics table from the core raw schema 
+    group: customer_info
     columns:
       - name: customer_demographics_sk
         tests:
@@ -41,6 +44,7 @@ models:
 
   - name: stg_tpcds_core__household_demographics
     description: staging model for the household_demographics table from the core raw schema 
+    group: customer_info
     columns:
       - name: household_demographics_sk
         tests:
@@ -57,6 +61,7 @@ models:
 
   - name: stg_tpcds_core__income_band
     description: staging model for the income_band table from the core raw schema 
+    group: customer_info
     columns:
       - name: income_band_sk
         tests:
