@@ -19,7 +19,7 @@ renamed as (
         c_first_sales_date_sk as first_sales_date_sk,
         c_salutation as salutation,
         c_first_name as first_name,
-        c_last_name as last_name,
+        substr(c_last_name, 1, 1) || '.' as last_name,
         c_preferred_cust_flag as preferred_cust_flag,
         coalesce(preferred_cust_flag, 'N') = 'Y' as is_preferred_customer,
         c_birth_day as birth_day,
