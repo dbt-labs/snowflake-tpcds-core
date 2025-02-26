@@ -1,4 +1,4 @@
 version: 2
 models:
   - name: transactions_by_customer
-    description: transactions by customer
+    description: transactions by customer test
