@@ -9,31 +9,34 @@ models:
 
   - name: stg_tpcds_core__customer
     description: staging model for the customer table from the core raw schema.
-    group: customer_info
     columns:
       - name: customer_sk
         tests:
           - unique
           - not_null
 
+    config:
+      group: customer_info
   - name: stg_tpcds_core__customer_address
     description: staging model for the customer_address table from the core raw schema
-    group: customer_info
     columns:
       - name: customer_address_sk
         tests:
           - unique
           - not_null
 
+    config:
+      group: customer_info
   - name: stg_tpcds_core__customer_demographics
     description: staging model for the customer_demographics table from the core raw schema
-    group: customer_info
     columns:
       - name: customer_demographics_sk
         tests:
           - unique
           - not_null
 
+    config:
+      group: customer_info
   - name: stg_tpcds_core__date_dim
     description: staging model for the date_dim table from the core raw schema
     columns:
@@ -44,13 +47,14 @@ models:
 
   - name: stg_tpcds_core__household_demographics
     description: staging model for the household_demographics table from the core raw schema
-    group: customer_info
     columns:
       - name: household_demographics_sk
         tests:
           - unique
           - not_null
 
+    config:
+      group: customer_info
   - name: stg_tpcds_core__inventory
     description: staging model for the inventory table from the core raw schema
     columns:
@@ -61,13 +65,14 @@ models:
 
   - name: stg_tpcds_core__income_band
     description: staging model for the income_band table from the core raw schema
-    group: customer_info
     columns:
       - name: income_band_sk
         tests:
           - unique
           - not_null
 
+    config:
+      group: customer_info
   - name: stg_tpcds_core__store
     description: staging model for the store table from the core raw schema
     columns:
@@ -75,4 +80,3 @@ models:
         tests:
           - unique
           - not_null
-
