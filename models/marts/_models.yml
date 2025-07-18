@@ -1,11 +1,11 @@
 models:
   - name: customers
     description: core data model for customers of our business
-    access: public
-    group: customer_info
     config:
       contract:
         enforced: true
+      access: public
+      group: customer_info
     columns:
       - name: customer_sk
         data_type: number
@@ -45,10 +45,10 @@ models:
   - name: stores
     description: core data model for stores
     latest_version: 1
-    access: public
     config:
       contract:
         enforced: true
+      access: public
     columns:
       - name: store_sk
         data_type: number
@@ -127,10 +127,10 @@ models:
 
   - name: call_centers
     description: core data model for call centers
-    access: public
     config:
       contract:
         enforced: true
+      access: public
     columns:
       - name: call_center_sk
         data_type: number
