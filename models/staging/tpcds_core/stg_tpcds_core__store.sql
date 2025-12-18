@@ -36,8 +36,8 @@ renamed as (
         s_state as state,
         s_zip as zip,
         s_country as country,
-        s_gmt_offset as gmt_offset,
-        s_tax_precentage as tax_precentage
+        cast(s_gmt_offset as number(5,2)) as gmt_offset,
+        cast(s_tax_precentage as number(5,2)) as tax_precentage
 
     from source
 

@@ -39,8 +39,8 @@ renamed as (
         cc_state as state,
         cc_zip as zip,
         cc_country as country,
-        cc_gmt_offset as gmt_offset,
-        cc_tax_percentage as tax_percentage
+        cast(cc_gmt_offset as number(5,2)) as gmt_offset,
+        cast(cc_tax_percentage as number(5,2)) as tax_percentage
 
     from source
 
